@@ -5,6 +5,7 @@ import CustomButton from "../Custom/Button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 // import loadingGif from "../../img/loader.gif";
 const Login = () => {
   const [isEye, setIsEye] = useState(true);
@@ -12,6 +13,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   // const [message, setMessage] = useState("");
   // const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleIconClick = () => {
     setIsEye((prevIsEye) => !prevIsEye);
@@ -26,6 +28,11 @@ const Login = () => {
     const password = e.target.value;
     setPassword(password);
   };
+
+  const handleNavigateRegister = () => {
+    navigate("/Signup");
+  };
+
   return (
     <div>
       <div className="main-container">
@@ -82,7 +89,7 @@ const Login = () => {
             cursor="pointer"
           />
 
-          <div className="cta-register">
+          <div className="cta-register" onClick={handleNavigateRegister}>
             Don't have an account? <span>Register</span>{" "}
           </div>
         </div>
