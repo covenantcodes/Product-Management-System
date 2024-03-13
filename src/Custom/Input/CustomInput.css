@@ -1,0 +1,48 @@
+input {
+    border: none;
+  }
+  
+  .custom-input {
+    margin: 1rem;
+  }
+  
+  .custom-input input {
+    width: 300px;
+  }
+  .custom-input label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: var(--font-family);
+  }
+  
+  .custom-input input[type="text"],
+  .custom-input input[type="password"] {
+    padding: 8px;
+    font-size: 16px;
+    border-bottom: 1px solid var(--custom-grey);
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Border color change on focus */
+  .custom-input input[type="text"]:focus,
+  .custom-input input[type="password"]:focus {
+    outline: none;
+    border-bottom: 1px solid var(--primary-color);
+    box-shadow: 0 0.5px 0px 0px var(--primary-color);
+  }
+  
+  .custom-input select {
+    width: 320px;
+    border: none;
+    color: #747474;
+    border-bottom: 1px solid var(--custom-grey);
+    padding-top: 1rem;
+    font-size: 15px;
+    padding-bottom: 1rem;
+    font-family: var(--font-family);
+  }
+  
+  .custom-input select:focus {
+    outline: none;
+  }
+  
