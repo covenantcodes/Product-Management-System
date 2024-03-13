@@ -1,12 +1,13 @@
-import './App.css'
-import Login from './Auth/Login'
+import "./App.css";
+import Login from "./Auth/Login";
+import Signup from "./Auth/Signup";
 
 const App = () => {
   return (
     <div>
-          <Login/>
+      <Signup />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
