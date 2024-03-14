@@ -1,0 +1,26 @@
+[
+    {
+        "label": "Ads",
+        "value": 32
+    },
+
+    {
+        "label": "Social",
+        "value": 68
+    },
+
+    {
+        "label": "Organic",
+        "value": 50
+    },
+
+    {
+        "label": "Referral",
+        "value": 40
+    },
+
+    {
+        "label": "Direct",
+        "value": 60
+    }
+]

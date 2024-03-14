@@ -3,6 +3,22 @@ import "./Dashboard.css";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import { Bar, Doughnut, Line } from "react-chartjs-2";
+import { Chart, registerables } from "chart.js";
+Chart.register(...registerables);
+
+import sourceData from "../chartData/sourceData.json";
+import profitData from "../chartData/profitData.json";
+
+Chart.defaults.maintainAspectRatio = false;
+Chart.defaults.responsive = true;
+
+Chart.defaults.plugins.title.display = true;
+Chart.defaults.plugins.title.align = "start";
+Chart.defaults.plugins.title.font = {
+  size: 20,
+};
+Chart.defaults.plugins.title.color = "black";
 
 const Dashboard = () => {
   return (
@@ -70,6 +86,100 @@ const Dashboard = () => {
             <div className="summary-box-icon blue">
               <MonetizationOnIcon />
             </div>
+          </div>
+        </div>
+
+        <div className="chart-container">
+          <div className="dataChart">
+            <Line
+              data={{
+                labels: profitData.map((data) => data.label),
+                datasets: [
+                  {
+                    label: "Profit",
+                    data: profitData.map((data) => data.profit),
+                    backgroundColor: "rgb(16, 192, 16)",
+                    borderColor: "rgb(16, 192, 16)",
+                  },
+                  {
+                    label: "Cost",
+                    data: profitData.map((data) => data.cost),
+                    backgroundColor: "orange",
+                    borderColor: "orange",
+                  },
+                ],
+              }}
+              options={{
+                plugins: {
+                  title: {
+                    text: "Monthly Profit and Cost",
+                  },
+                  font: {
+                    size: 16,
+                    family: "Poppins",
+                  },
+                },
+              }}
+            />
+          </div>
+        </div>
+
+        <div className="chart-container">
+          <div className="dataChart second-chart">
+            <Bar
+              data={{
+                labels: sourceData.map((data) => data.label),
+                datasets: [
+                  {
+                    label: "Sales for 2021 (M)",
+                    data: sourceData.map((data) => data.value),
+                    backgroundColor: [
+                      "rgb(16, 192, 16)",
+                      "rgba(225,99,71)",
+                      "rgba(255,165,0)",
+                      "rgba(46,46,235)",
+                      "rgba(00,00,29,0.8)",
+                    ],
+                    borderRadius: 5,
+                  },
+                ],
+              }}
+              options={{
+                plugins: {
+                  title: {
+                    text: "Monthly Sales",
+                  },
+                },
+              }}
+            />
+          </div>
+          <div className="dataChart second-chart">
+            <Doughnut
+              data={{
+                labels: sourceData.map((data) => data.label),
+                datasets: [
+                  {
+                    label: "Sales for 2021 (M)",
+                    data: sourceData.map((data) => data.value),
+                    backgroundColor: [
+                      "rgb(16, 192, 16)",
+                      "rgba(225,99,71)",
+                      "rgba(255,165,0)",
+                      "rgba(46,46,235)",
+                      "rgba(00,00,29,0.8)",
+                    ],
+                    borderRadius: 5,
+                  },
+                ],
+              }}
+              options={{
+                plugins: {
+                  title: {
+                    text: "Monthly Sales",
+                  },
+                },
+              }}
+            />
           </div>
         </div>
       </div>

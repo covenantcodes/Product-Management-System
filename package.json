@@ -22,6 +22,7 @@
     "@mui/material": "^5.15.13",
     "chart.js": "^4.4.2",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
     "react-chartjs2": "^1.2.1",
     "react-dom": "^18.2.0",
     "react-pro-sidebar": "^1.1.0",

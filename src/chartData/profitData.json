@@ -1,0 +1,73 @@
+[
+    {
+        "label": "Jan",
+        "profit": 8000,
+        "cost": 15000
+    },
+
+    {
+        "label": "Feb",
+        "profit": 60000,
+        "cost": 25000
+    },
+
+    {
+        "label": "Mar",
+        "profit": 500,
+        "cost": 5000
+    },
+
+    {
+        "label": "Apr",
+        "profit": 1500,
+        "cost": 150000
+    },
+
+    {
+        "label": "May",
+        "profit": 70000,
+        "cost": 12000
+    },
+
+    {
+        "label": "Jun",
+        "profit": 1700,
+        "cost": 10000
+    },
+
+    {
+        "label": "Jul",
+        "profit": 400000,
+        "cost": 300000
+    },
+
+    {
+        "label": "Aug",
+        "profit": 100,
+        "cost": 20000
+    },
+
+    {
+        "label": "Sep",
+        "profit": 40000,
+        "cost": 34589
+    },
+
+    {
+        "label": "Oct",
+        "profit": 340000,
+        "cost": 237654
+    },
+
+    {
+        "label": "Nov",
+        "profit": 4500,
+        "cost": 22455
+    },
+
+    {
+        "label": "Dec",
+        "profit": 3290,
+        "cost": 1000
+    }
+]
