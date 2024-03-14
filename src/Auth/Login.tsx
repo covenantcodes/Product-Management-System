@@ -29,6 +29,10 @@ const Login = () => {
     setPassword(password);
   };
 
+  const handleLogin = () => {
+    navigate("/dashboard")
+  }
+
   const handleNavigateRegister = () => {
     navigate("/Signup");
   };
@@ -76,9 +80,7 @@ const Login = () => {
             border="none"
             color="white"
             padding="1rem"
-            onClick={() => {
-              console.log("Login");
-            }}
+            onClick={handleLogin}
             radius="5px"
             label="Login"
             bgcolor="var(--primary-color)"

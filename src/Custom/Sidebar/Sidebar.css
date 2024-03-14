@@ -1,0 +1,32 @@
+.sidebar-title {
+  text-align: center;
+  padding-left: 0.5rem;
+  color: white;
+}
+
+.sidelogo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.sidelogo-container img {
+  width: 55%;
+}
+
+.sidebar-menuitem {
+  color: black;
+}
+
+.sidebar-menuitem:hover {
+  color: var(--primary-color);
+}
+
+.ps-sidebar-root.sidebar-main.css-1l4lsha {
+  border: none !important;
+  border-right: none !important;
+}
