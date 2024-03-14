@@ -3,15 +3,15 @@ import {
   Menu,
   MenuItem,
   // SubMenu,
-  //   sidebarClasses,
+  // sidebarClasses,
 } from "react-pro-sidebar";
 import "./Sidebar.css";
 import { CSSObject } from "@mui/material";
 import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
-import QueryStatsOutlinedIcon from '@mui/icons-material/QueryStatsOutlined';
+import QueryStatsOutlinedIcon from "@mui/icons-material/QueryStatsOutlined";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import PersonIcon from "@mui/icons-material/Person";
+import Person3OutlinedIcon from "@mui/icons-material/Person3Outlined";
 import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
 import {
   Link,
@@ -55,9 +55,10 @@ const SideBar = () => {
         top: 0,
         bottom: 0,
         left: 0,
-        width: "20%",
+        width: "17%",
         overflowX: "hidden",
         zIndex: 1000,
+        backgroundColor: "#fff"
       }}
     >
       <Sidebar className="app">
@@ -102,7 +103,7 @@ const SideBar = () => {
           <MenuItem
             className="sidebar-menuitem"
             component={<Link to="/Profile" className="sidebar-menuitem" />}
-            icon={<PersonIcon />}
+            icon={<Person3OutlinedIcon />}
           >
             Profile
           </MenuItem>

@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 // import loadingGif from "../../img/loader.gif";
 const Signup = () => {
   const [isEye, setIsEye] = useState(true);
-  const [username, setUsername] = useState("");
+  const [fullname, setFullname] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   // const [message, setMessage] = useState("");
@@ -20,9 +20,9 @@ const Signup = () => {
     setIsEye((prevIsEye) => !prevIsEye);
   };
 
-  const onChangeUsername = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const username = e.target.value;
-    setUsername(username);
+  const onChangeFullName = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const fullname = e.target.value;
+    setFullname(fullname);
   };
 
   const onChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -51,7 +51,7 @@ const Signup = () => {
           <div className="custom-input">
             <input
               type="text"
-              placeholder="Username"
+              placeholder="Email"
               autoComplete="off"
               onChange={onChangeEmail}
               value={email}
@@ -62,10 +62,10 @@ const Signup = () => {
           <div className="custom-input">
             <input
               type="text"
-              placeholder="Username"
+              placeholder="Full Name"
               autoComplete="off"
-              onChange={onChangeUsername}
-              value={username}
+              onChange={onChangeFullName}
+              value={fullname}
               required
             />
           </div>
@@ -74,24 +74,6 @@ const Signup = () => {
             <input
               type={isEye ? "password" : "text"}
               placeholder="Password"
-              id="password"
-              onChange={onChangePassword}
-              value={password}
-              required
-            />
-            <div className="eyeIcon-container" onClick={handleIconClick}>
-              {isEye ? (
-                <FontAwesomeIcon className="eyeSlash" icon={faEyeSlash} />
-              ) : (
-                <FontAwesomeIcon className="eyeIcon" icon={faEye} />
-              )}
-            </div>
-          </div>
-
-          <div className="password-input-container custom-input">
-            <input
-              type={isEye ? "password" : "text"}
-              placeholder="Confirm Password"
               id="password"
               onChange={onChangePassword}
               value={password}

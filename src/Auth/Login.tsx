@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 // import loadingGif from "../../img/loader.gif";
 const Login = () => {
   const [isEye, setIsEye] = useState(true);
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   // const [message, setMessage] = useState("");
   // const [isLoading, setIsLoading] = useState(false);
@@ -19,9 +19,9 @@ const Login = () => {
     setIsEye((prevIsEye) => !prevIsEye);
   };
 
-  const onChangeUsername = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const username = e.target.value;
-    setUsername(username);
+  const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const email = e.target.value;
+    setEmail(email);
   };
 
   const onChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -50,8 +50,8 @@ const Login = () => {
               type="text"
               placeholder="Username"
               autoComplete="off"
-              onChange={onChangeUsername}
-              value={username}
+              onChange={onChangeEmail}
+              value={email}
               required
             />
           </div>
