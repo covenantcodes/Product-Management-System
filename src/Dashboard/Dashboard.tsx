@@ -1,8 +1,11 @@
 import SideBar from "../Custom/Sidebar/Sidebar";
 import "./Dashboard.css";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
+import CategoryIcon from "@mui/icons-material/Category";
+import Inventory2Icon from '@mui/icons-material/Inventory2';
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import CountUp from "react-countup";
 import { Bar, Doughnut, Line } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
 Chart.register(...registerables);
@@ -31,7 +34,10 @@ const Dashboard = () => {
           <div className="summary-box-container">
             <div>
               <div className="summary-box-title">SALES</div>
-              <div className="summary-box-value"> $25k </div>
+              <div className="summary-box-value">
+                {" "}
+                $<CountUp start={0} end={25} duration={3} />k
+              </div>
 
               <div className="summary-box-growth">
                 <ArrowUpwardIcon /> 12% Since last month
@@ -46,7 +52,10 @@ const Dashboard = () => {
           <div className="summary-box-container">
             <div>
               <div className="summary-box-title">CATEGORIES</div>
-              <div className="summary-box-value"> 12 </div>
+              <div className="summary-box-value">
+                {" "}
+                <CountUp start={0} end={12} duration={4} />{" "}
+              </div>
 
               <div className="summary-box-growth red">
                 <ArrowDownwardIcon /> 12% Since last month
@@ -54,14 +63,17 @@ const Dashboard = () => {
             </div>
 
             <div className="summary-box-icon green">
-              <MonetizationOnIcon />
+              <CategoryIcon />
             </div>
           </div>
 
           <div className="summary-box-container">
             <div>
               <div className="summary-box-title">NO OF PRODUCTS</div>
-              <div className="summary-box-value"> 1200 </div>
+              <div className="summary-box-value">
+                {" "}
+                <CountUp start={0} end={1200} duration={5} />{" "}
+              </div>
 
               <div className="summary-box-growth">
                 <ArrowUpwardIcon /> 12% Since last month
@@ -69,14 +81,17 @@ const Dashboard = () => {
             </div>
 
             <div className="summary-box-icon">
-              <MonetizationOnIcon />
+              <Inventory2Icon />
             </div>
           </div>
 
           <div className="summary-box-container">
             <div>
               <div className="summary-box-title">PROFIT</div>
-              <div className="summary-box-value"> $2.5k </div>
+              <div className="summary-box-value">
+                {" "}
+                $<CountUp start={0} end={2.5} duration={6} />k{" "}
+              </div>
 
               <div className="summary-box-growth red">
                 <ArrowDownwardIcon /> 5% Since last month
@@ -113,10 +128,10 @@ const Dashboard = () => {
                 plugins: {
                   title: {
                     text: "Monthly Profit and Cost",
-                  },
-                  font: {
-                    size: 16,
-                    family: "Poppins",
+                    font: {
+                      size: 16,
+                      family: "Poppins",
+                    },
                   },
                 },
               }}
@@ -147,7 +162,11 @@ const Dashboard = () => {
               options={{
                 plugins: {
                   title: {
-                    text: "Monthly Sales",
+                    text: "Monthly Profit Sales",
+                    font: {
+                      size: 16,
+                      family: "Poppins",
+                    },
                   },
                 },
               }}
@@ -175,7 +194,11 @@ const Dashboard = () => {
               options={{
                 plugins: {
                   title: {
-                    text: "Monthly Sales",
+                    text: "Monthly Profit Sales",
+                    font: {
+                      size: 16,
+                      family: "Poppins",
+                    },
                   },
                 },
               }}
