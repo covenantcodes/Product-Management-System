@@ -1,15 +1,13 @@
 import { useState } from "react";
 import SideBar from "../Custom/Sidebar/Sidebar";
-import "./Inventory.css";
+import "../Inventory/Inventory.css";
 import "../Custom/Input/CustomInput.css";
 import CustomButton from "../Custom/Button/Button";
 import productData from "../dummyData/productData.json";
 import Modal from "@mui/material/Modal";
 import CloseIcon from "@mui/icons-material/Close";
-import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
 
-const Inventory = () => {
+const Order = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => {
     setIsModalOpen(true);
@@ -25,7 +23,7 @@ const Inventory = () => {
       <SideBar />
       <div className="inventory-main-container">
         <div className="top-container">
-          <div className="top-title">Inventory</div>
+          <div className="top-title">Sales Order</div>
           <div className="custom-input">
             <input
               type="text"
@@ -42,7 +40,7 @@ const Inventory = () => {
               padding=".6rem"
               onClick={openModal}
               radius="5px"
-              label="Add Product"
+              label="Place Order"
               bgcolor="var(--primary-color)"
               width="180px"
               fontFamily="var(--main-font)"
@@ -60,10 +58,9 @@ const Inventory = () => {
           <div className="product-list-header">
             <div className="product-list-header-item">Name</div>
             <div className="product-list-header-item">Category</div>
-            <div className="product-list-header-item">Price</div>
             <div className="product-list-header-item">Quantity</div>
-            <div className="product-list-header-item">Picture</div>
-            <div className="product-list-header-item">Actions</div>
+            <div className="product-list-header-item">Unit Price ($)</div>
+            <div className="product-list-header-item">Total Price ($)</div>
           </div>
 
           {products.map((product, index) => (
@@ -75,20 +72,13 @@ const Inventory = () => {
                 <div>{product.productCategory}</div>
               </div>
               <div className="product-item">
-                <div>${product.productPrice}</div>
-              </div>
-
-              <div className="product-item">
                 <div>{product.productQuantity}</div>
               </div>
-
               <div className="product-item">
-                <img src={product.productImage} alt="product img" />
+                <div>{product.productPrice}</div>
               </div>
-
               <div className="product-item">
-                <EditIcon className="action-button" />
-                <DeleteIcon className="action-button" />
+                <div>{product.productPrice * product.productQuantity}</div>
               </div>
             </div>
           ))}
@@ -107,7 +97,7 @@ const Inventory = () => {
               />
             </div>
             <div className="modal-top">
-              <div className="page-title">Add New Product</div>
+              <div className="page-title">Place New Order</div>
             </div>
             <div>
               <div>
@@ -133,23 +123,10 @@ const Inventory = () => {
                 <div className="password-input-container custom-input">
                   <input
                     type="text"
-                    name="Price"
-                    placeholder="Price"
-                    className="modal-input"
-                  />
-                </div>
-
-                <div className="password-input-container custom-input">
-                  <input
-                    type="text"
                     name="Quantity"
                     placeholder="Quantity"
                     className="modal-input"
                   />
-                </div>
-
-                <div className="password-input-container custom-input">
-                  <input type="file" className="modal-select-input" />
                 </div>
 
                 <div className="custom-button-container">
@@ -158,7 +135,7 @@ const Inventory = () => {
                     color="white"
                     padding="1rem"
                     radius="5px"
-                    label="Add Product"
+                    label="Place Order"
                     bgcolor="var(--primary-color)"
                     width="320px"
                     fontFamily="var(--main-font)"
@@ -177,4 +154,4 @@ const Inventory = () => {
   );
 };
 
-export default Inventory;
+export default Order;

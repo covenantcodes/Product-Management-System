@@ -8,7 +8,7 @@ import {
 import "./Sidebar.css";
 import { CSSObject } from "@mui/material";
 import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
-import QueryStatsOutlinedIcon from "@mui/icons-material/QueryStatsOutlined";
+// import QueryStatsOutlinedIcon from "@mui/icons-material/QueryStatsOutlined";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Person3OutlinedIcon from "@mui/icons-material/Person3Outlined";
@@ -58,7 +58,7 @@ const SideBar = () => {
         width: "17%",
         overflowX: "hidden",
         zIndex: 1000,
-        backgroundColor: "#fff"
+        backgroundColor: "#fff",
       }}
     >
       <Sidebar className="app">
@@ -93,13 +93,15 @@ const SideBar = () => {
           >
             Order
           </MenuItem>
-          <MenuItem
+
+          {/* <MenuItem
             className="sidebar-menuitem"
             component={<Link to="/Reports" className="sidebar-menuitem" />}
             icon={<QueryStatsOutlinedIcon />}
           >
             Reports
-          </MenuItem>
+          </MenuItem> */}
+
           <MenuItem
             className="sidebar-menuitem"
             component={<Link to="/Profile" className="sidebar-menuitem" />}

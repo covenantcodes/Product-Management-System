@@ -5,6 +5,7 @@ import Signup from "./Auth/Signup.tsx";
 import Dashboard from "./Dashboard/Dashboard.tsx";
 import Profile from "./Profile/Profile.tsx";
 import Inventory from "./Inventory/Inventory.tsx";
+import Order from "./Orders/Order.tsx";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/inventory" element={<Inventory />} />
+          <Route path="/order" element={<Order/>}/>
         </Routes>
       </Router>
     </div>

@@ -55,6 +55,16 @@
   width: 40%;
 }
 
+.action-button {
+  color: #525252;
+}
+
+.custom-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .modal-container {
   display: flex;
   flex-direction: column;
@@ -90,4 +100,8 @@
 
 .modal-top {
   text-align: center;
+}
+
+.modal-select-input {
+  padding: 0.5rem;
 }
