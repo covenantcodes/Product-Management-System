@@ -59,7 +59,7 @@ const Inventory = () => {
             <div className="product-list-header-item">Name</div>
             <div className="product-list-header-item">Category</div>
             <div className="product-list-header-item">Price</div>
-            <div className="product-list-header-item">Quality</div>
+            <div className="product-list-header-item">Quantity</div>
             <div className="product-list-header-item">Picture</div>
           </div>
 
@@ -126,9 +126,22 @@ const Inventory = () => {
                   <input
                     type="text"
                     name="Price"
-                    placeholder="Location"
+                    placeholder="Price"
                     className="modal-input"
                   />
+                </div>
+
+                <div className="password-input-container custom-input">
+                  <input
+                    type="text"
+                    name="Quantity"
+                    placeholder="Quantity"
+                    className="modal-input"
+                  />
+                </div>
+
+                <div className="password-input-container custom-input">
+                  <input type="file" className="modal-select-input" />
                 </div>
 
                 <div className="custom-button-container">
