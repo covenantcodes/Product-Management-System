@@ -10,8 +10,8 @@ import { Bar, Doughnut, Line } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
 Chart.register(...registerables);
 
-import sourceData from "../chartData/sourceData.json";
-import profitData from "../chartData/profitData.json";
+import sourceData from "../dummyData/sourceData.json";
+import profitData from "../dummyData/profitData.json";
 
 Chart.defaults.maintainAspectRatio = false;
 Chart.defaults.responsive = true;

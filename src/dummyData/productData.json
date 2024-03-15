@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "productName": "Golden Morn",
+        "productCategory": "Cereal",
+        "productPrice": 200,
+        "productQuantity": 44,
+        "productImage": "../../img/product-goldenmorn.jpg"
+    },
+
+    {
+        "id": 2,
+        "productName": "Cargo Pants",
+        "productCategory": "Fashion",
+        "productPrice": 6000,
+        "productQuantity": 500,
+        "productImage": "../../img/product-cargopants.jpg"
+    },
+
+    {
+        "id": 3,
+        "productName": "iPhone 15",
+        "productCategory": "Gadgets",
+        "productPrice": 1500000,
+        "productQuantity": 12,
+        "productImage": "../../img/product-iphone.jpg"
+    },
+
+    {
+        "id": 4,
+        "productName": "Macbook Pro",
+        "productCategory": "Laptops and Accessories",
+        "productPrice": 1222000,
+        "productQuantity": 5,
+        "productImage": "../../img/product-mac.jpg"
+    },
+
+    {
+        "id": 5,
+        "productName": "Shoes for Men",
+        "productCategory": "Fashion",
+        "productPrice": 3000,
+        "productQuantity": 12,
+        "productImage": "../../img/product-shoes.jpg"
+    }   
+]

@@ -5,7 +5,6 @@ interface Props {
   bgcolor: string;
   color: string;
   label?: React.ReactNode;
-  icon?: React.ReactNode; // New optional prop for icon
   padding: string;
   radius: string;
   width: string;
@@ -23,7 +22,6 @@ const CustomButton: React.FC<Props> = ({
   color,
   bgcolor,
   label,
-  icon, // New icon prop
   padding,
   radius,
   width,
@@ -49,13 +47,8 @@ const CustomButton: React.FC<Props> = ({
         fontSize,
         marginTop,
         cursor,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: icon ? "space-between" : "center",
       }}
     >
-      {icon && <div style={{ marginRight: "0.5em" }}>{icon}</div>}
-
       {label}
     </button>
   );
