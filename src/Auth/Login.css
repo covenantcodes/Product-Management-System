@@ -82,3 +82,11 @@
   cursor: pointer;
   font-style: italic;
 }
+
+.image-picker-container {
+  padding: 1rem;
+}
+
+.add-image-icon {
+  color: var(--custom-grey);
+}
