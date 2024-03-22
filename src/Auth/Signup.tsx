@@ -7,15 +7,15 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import axios from "axios"; // Import Axios
-import AddAPhotoIcon from "@mui/icons-material/AddAPhoto"; // Import MUI icon
+// import AddAPhotoIcon from "@mui/icons-material/AddAPhoto"; // Import MUI icon
 
 const Signup = () => {
   const [isEye, setIsEye] = useState(true);
   const [fullname, setFullname] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [image, setImage] = useState<File | null>(null); // Adjusted type
-  const [imagePreview, setImagePreview] = useState<string | null>(null); // Adjusted type
+  // const [image, setImage] = useState<File | null>(null); // Adjusted type
+  // const [imagePreview, setImagePreview] = useState<string | null>(null); // Adjusted type
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -24,7 +24,7 @@ const Signup = () => {
   };
 
   const validateForm = () => {
-    if (!email.trim() || !fullname.trim() || !password.trim() || !image) {
+    if (!email.trim() || !fullname.trim() || !password.trim()) {
       setError("All fields are required");
       return false;
     }
@@ -32,19 +32,19 @@ const Signup = () => {
     return true;
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0]; // Using optional chaining to avoid null error
-    if (file) {
-      setImage(file);
+  // const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const file = e.target.files?.[0]; // Using optional chaining to avoid null error
+  //   if (file) {
+  //     setImage(file);
 
-      // For previewing the image
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setImagePreview(reader.result as string);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
+  //     // For previewing the image
+  //     const reader = new FileReader();
+  //     reader.onloadend = () => {
+  //       setImagePreview(reader.result as string);
+  //     };
+  //     reader.readAsDataURL(file);
+  //   }
+  // };
 
   const handleRegister = async () => {
     if (!validateForm()) return;
@@ -54,33 +54,13 @@ const Signup = () => {
       formData.append("name", fullname);
       formData.append("email", email);
       formData.append("password", password);
-      formData.append("role", "manager"); // Assuming a default role
+      formData.append("role", "manager");
+      formData.append(
+        "image",
+        "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?w=826&t=st=1710937478~exp=1710938078~hmac=03b16fcc4f16d9c5988be2e787fde22805ef686fbb88b44153fa4d5a85971483"
+      );
+      // if (image) formData.append("image", image);
 
-      if (image) {
-        // Convert image to Base64 string
-        const reader = new FileReader();
-        reader.onloadend = () => {
-          const imageData = reader.result?.toString().split(",")[1];
-          if (imageData) {
-            formData.append("image", imageData);
-
-            // Make the axios request
-            axiosRequest(formData);
-          }
-        };
-        reader.readAsDataURL(image);
-      } else {
-        // If no image, make the axios request directly
-        axiosRequest(formData);
-      }
-    } catch (error) {
-      console.error("Error registering user:", error);
-      // Display error message to the user
-    }
-  };
-
-  const axiosRequest = async (formData) => {
-    try {
       const response = await axios.post(
         "https://pmsgr10.000webhostapp.com/api/auth/register",
         formData,
@@ -94,9 +74,15 @@ const Signup = () => {
       console.log("Registration successful:", response.data);
 
       // Assuming successful registration, redirect to login page
-      navigate("/login");
+      navigate("/");
     } catch (error) {
-      console.error("Error registering user:", error.response?.data);
+      if (axios.isAxiosError(error)) {
+        // Handle Axios errors
+        console.error("Error registering user:", error.response?.data);
+      } else {
+        // Handle other types of errors
+        console.error("Error registering user:", error);
+      }
       // Display error message to the user
     }
   };
@@ -150,7 +136,7 @@ const Signup = () => {
             </div>
           </div>
 
-          <div className="custom-input">
+          {/* <div className="custom-input">
             <div className="image-picker-container">
               <label htmlFor="image-picker">
                 <AddAPhotoIcon className="add-image-icon" />
@@ -170,7 +156,7 @@ const Signup = () => {
                 style={{ maxWidth: "100px", marginTop: "10px" }}
               />
             )}
-          </div>
+          </div> */}
 
           <CustomButton
             border="none"
@@ -187,7 +173,7 @@ const Signup = () => {
             cursor="pointer"
           />
 
-          <div className="cta-register" onClick={() => navigate("/login")}>
+          <div className="cta-register" onClick={() => navigate("/")}>
             Already have an account? <span>Login</span>{" "}
           </div>
         </div>
