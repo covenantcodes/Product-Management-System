@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Login.css";
 import "../Custom/Input/CustomInput.css";
 import CustomButton from "../Custom/Button/Button";
